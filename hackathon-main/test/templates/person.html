@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="templates/style/personal.css">
+    <title>Hackathon</title>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            Personal: Name Surname or ID
+        </div>
+        <div class="item">
+            <div class="center"> <span style="color: aqua;">Humidity {{.Humidity}}</span> 
+                <div  class="circle">
+                  <div id="wave" class="wave"></div>
+                  <p id="waveb" style="display: none;">{{.Humidity}}</p>
+                </div>
+              </div>
+        </div>
+        <div class="item">
+            <div class="center-3"> <span style="color: cadetblue;">Gas V {{.GasValue}}</span> 
+                <div class="circle-3">
+                  <div id="wave-3" class="wave-3"></div>
+                  <p id="wavec" style="display: none;">{{.GasValue}}</p>
+                </div>
+              </div>
+        </div>
+        <div class="item">
+            <div class="center-4"> <span style="color: grey;">Pressure {{.Pressure}}</span> 
+                <div class="circle-4">
+                  <div id="wave-4" class="wave-4"></div>
+                  <p id="waved" style="display: none;">{{.Pressure}}</p>
+                </div>
+              </div>
+        </div>
+        <div class="item">
+            <div class="center-5"> <span style="color: rgb(237, 111, 43);">Temp {{.Temperature}}</span> 
+                <div class="circle-5">
+                  <div id="wave-5" class="wave-5"></div>
+                  <p id="wavee" style="display: none;">{{.Temperature}}</p>
+                </div>
+              </div>
+        </div>
+        <div class="item">
+            <div class="center-6"> <span style="color: rgb(7, 164, 204);">Water V {{.WaterValue}}</span> 
+                <div class="circle-6">
+                  <div id="wave-6" class="wave-6"></div>
+                  <p id="wavef" style="display: none;">{{.WaterValue}}</p>
+                </div>
+              </div>   
+        </div>
+      </div>
+      <script>
+        document.getElementById("wave").style.top = 100 - Number(document.getElementById("waveb").innerHTML) + "%"
+        document.getElementById("wave-3").style.top = 100 - Number(document.getElementById("wavec").innerHTML) + "%"
+        document.getElementById("wave-4").style.top = 100 - Number(document.getElementById("waved").innerHTML) + "%"
+        document.getElementById("wave-5").style.top = 100 - Number(document.getElementById("wavee").innerHTML) + "%"
+        document.getElementById("wave-6").style.top = 100 - Number(document.getElementById("wavef").innerHTML) + "%"
+    </script>
+</body>
+</html>
